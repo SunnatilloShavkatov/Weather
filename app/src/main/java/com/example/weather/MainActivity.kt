@@ -11,7 +11,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
 @DelicateCoroutinesApi
 class MainActivity : AppCompatActivity() {
     private lateinit var textView: TextView
@@ -25,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         btVar1.setOnClickListener {
             getWeather()
         }
-
     }
 
     private fun getWeather() {
@@ -41,9 +39,7 @@ class MainActivity : AppCompatActivity() {
                 )
                 if (response.isSuccessful) {
                     val weatherResponse = response.body()
-                    Log.e("lat", weatherResponse.toString())
                     textView.text = weatherResponse?.main?.temp.toString()
-
                 } else {
                     Toast.makeText(
                         this@MainActivity,
